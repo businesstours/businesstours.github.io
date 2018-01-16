@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Business Tours</title>
+	<link rel="stylesheet" type="text/css" href="css/businesstours.css">
+	<script type="text/javascript" src="howler.js"></script>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+
+		var keyData = {
+			q: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			w: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			e: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			r: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+				t: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			y: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			u: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			i: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			o: {
+				sound: new Howl({
+					src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			p: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			a: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			s: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+				d: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			f: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			g: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			h: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			j: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			k: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			l: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			z: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			x: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			c: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			v: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			b: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			n: {
+				sound: new Howl({
+					src: ['sounds/gotthatsean.mp3']
+				}),
+			},
+			m: {
+				sound: new Howl({
+		  		src: ['sounds/gotthatsean.mp3']
+				}),
+			}
+		}
+
+		function onKeyDown(event) {
+		
+			if (keyData[event.key]){
+				var value = Math.floor(value + Math.random()*100) % 2;
+				// console.log(value);
+				// var bodyWidth = document.body.clientWidth;
+				// var bodyHeight = document.body.clientHeight;
+				var bodyWidth = window.innerWidth;
+				var bodyHeight = window.innerHeight;
+				var randPosX = (Math.random() * 100000) %bodyWidth;
+				var randPosY = (Math.random() * 100000) %bodyHeight;
+		 	   	var c = document.getElementById("myCanvas");
+		    	var ctx = c.getContext("2d");
+		    	var img = document.getElementById("emily");
+		    	ctx.drawImage(img, randPosX, randPosY);
+				keyData[event.key].sound.play();
+			}
+
+		}
+		function onFrame(event){}
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+	<img id="emily" src="emily.jpg" width="50" height="50" style="display: none;">
+</body>
+</html>
